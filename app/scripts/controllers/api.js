@@ -8,10 +8,5 @@
  * Controller of the bigdriveAngularApp
  */
 angular.module('bigdriveAngularApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ApiCtrl', function ($scope) {
   });
