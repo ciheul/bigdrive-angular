@@ -18,15 +18,18 @@ angular.module('bigdriveAngularApp')
         var c = JSON.parse(event.data);
       } catch (err) { return; }
 
-      console.log(event.data);
-      var path = addPath(map, c.lat1, c.lon1, c.lat2, c.lon2);
-      pathOverlays.push(path);
+      if (c.type === 'path') {
+        var path = addPath(map, c.lat1, c.lon1, c.lat2, c.lon2);
+        pathOverlays.push(path);
+      } else if (c.type === 'point') {
+        var marker = addMarker(map, c.lat, c.lon);
+        pathOverlays.push(marker);
+      }
     });
 
     $scope.play = function () {
       $http.get('/api/play/')
         .success(function (data, status, headers, config) {
-          console.log(data);
         });  
     };
 
@@ -57,9 +60,11 @@ function initMap() {
 
 
 function addMarker(map, lat, lon) {
-  L.marker([lat, lon]).addTo(map);
+  var marker = L.marker([lat, lon]).addTo(map);
   map.setView([lat, lon], 14);
+  return marker;
 }
+
 
 function addPath(map, lat1, lon1, lat2, lon2) {
   var a = new L.LatLng(lat1, lon1);
