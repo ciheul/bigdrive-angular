@@ -27,7 +27,17 @@ angular
         templateUrl: 'views/api.html',
         controller: 'ApiCtrl'
       })
+      .when('/device', {
+        templateUrl: 'views/device.html',
+        controller: 'DeviceCtrl'
+      })
+      .when('/history', {
+        templateUrl: 'views/history.html',
+        controller: 'HistoryCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+
+    //$locationProvider.html5Mode(true);
   });

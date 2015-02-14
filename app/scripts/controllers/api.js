@@ -8,5 +8,5 @@
  * Controller of the bigdriveAngularApp
  */
 angular.module('bigdriveAngularApp')
-  .controller('ApiCtrl', function ($scope) {
+  .controller('ApiCtrl', function () {
   });

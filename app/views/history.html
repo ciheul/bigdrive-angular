@@ -1,0 +1,28 @@
+<div class="main-content">
+  <div class="col-sm-3 col-lg-3">
+    <div class="form-group">
+      <label class="control-label col-sm-2 col-lg-2" for="id_device">Device</label>
+      <select class="form-control" ng-model="selectedDevice" ng-options="device.name for device in devices" ng-change="show()">
+        <option value="">Select Device</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label class="control-label col-sm-2 col-lg-2" for="id_device">Date</label>
+      <input class="form-control" maxlength="10" type="text" value="{{ dateSelected }}" placeholder="ex: {{ dateSelected }}" ng-model="dateSelected" ng-change="setDateSelected()">
+    </div>
+
+    <hr>
+
+    <div class="panel panel-default" ng-show="showResultLength">
+      <div class="panel-body">
+        <strong>Total points:</strong> {{ resultLength }}
+      </div>
+    </div>
+    <div class="alert alert-danger" ng-show="showWrongParameter">Wrong parameter!</div>
+  </div>
+
+  <div class="col-sm-9 col-lg-9">
+    <div id="map"></div>
+  </div>
+</div>
