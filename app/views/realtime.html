@@ -1,0 +1,24 @@
+<div id="btn-media">
+  <button class="btn btn-success" type="submit" ng-click="play()">Play</button>
+  <button class="btn btn-default" type="submit" ng-click="clearMap()">Clear</button>
+</div>
+
+<div id="map"></div>
+<div id="content"></div>
+
+<hr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="col-sm-11 small">Name</th>
+      <th class="col-sm-1 text-center">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="d in devices">
+      <td>{{ d.name }}</td>
+      <td class="col-sm-1 text-center"><span class="label label-danger">Offline</span></td>
+    </tr>
+  </tbody>
+</table>
+

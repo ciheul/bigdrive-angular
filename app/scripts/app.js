@@ -23,6 +23,10 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/realtime', {
+        templateUrl: 'views/realtime.html',
+        controller: 'RealTimeCtrl'
+      })
       .when('/api', {
         templateUrl: 'views/api.html',
         controller: 'ApiCtrl'

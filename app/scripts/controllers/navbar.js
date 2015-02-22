@@ -24,8 +24,9 @@ angular.module('bigdriveAngularApp')
 
     $scope.menus = [
       { name: 'API', url: '#/api' },
+      { name: 'Devices', url: '#/device' },
       { name: 'Track History', url: '#/history' },
-      { name: 'My Devices', url: '#/device' },
+      { name: 'Real Time', url: '#/realtime' },
       { name: 'Home', url: '#/' },
     ];
   });

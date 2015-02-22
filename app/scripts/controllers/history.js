@@ -29,7 +29,7 @@ angular.module('bigdriveAngularApp')
     $scope.show = function () { 
       clearMap(map, pathOverlays);
 
-      var params = {};
+      var params = { aggregate: 1 };
       if ($scope.selectedDevice !== null)
         params.deviceID = $scope.selectedDevice.name;
 
@@ -44,6 +44,7 @@ angular.module('bigdriveAngularApp')
 
           var path = null;
           for (var i = 0; i < data.length; i++) {
+            console.log(data[i].lat + " " + data[i].lon);
             if (i === 0) {
               path = addPath(map, data[i].lat, data[i].lon, data[i].lat,
                                  data[i].lon);
